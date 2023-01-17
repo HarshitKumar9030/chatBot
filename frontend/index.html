@@ -5,8 +5,20 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CHAT BOT - Frontend</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    
+    <div class="chat-container">
+        <div class="chat-header">
+          <img src="https://www.techopedia.com/images/uploads/6e13a6b3-28b6-454a-bef3-92d3d5529007.jpeg" alt="Bot Avatar" class="bot-avatar" />
+          Chatbot
+        </div>
+        <div id="chat-output"></div>
+        <div class="chat-input-container">
+          <input type="text" id="chat-input" placeholder="Enter your message here..."/>
+          <button id="chat-button">Send</button>
+        </div>
+      </div>
+      <script src="script.js"></script>
 </body>
 </html>

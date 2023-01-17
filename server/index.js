@@ -3,10 +3,23 @@ const app = express();
 require("dotenv").config();
 const port = process.env.PORT || 3000;
 
+const cors = require("cors");
+app.use(cors()); 
+
+// allow origin * for now
+app.use((req, res, next) => {
+    res.header("Access-Control-Allow-Origin", "*");
+    res.header("Access-Control-Allow-Headers", "*");
+    next();
+});
+
 const bodyParser = require("body-parser");
 app.use(bodyParser.json());
 
+
+
 const greetings = ["hello", "hi", "hey", "greetings"];
+const daily_greetings = ["morning", "afternoon", "evening", "night"];
 const help_keywords = ["help", "support", "assist", "aid"];
 const product_keywords = ["product", "items", "goods"];
 const price_keywords = ["price", "cost", "fee"];
@@ -50,12 +63,31 @@ app.post("/chat", (req, res) => {
       });
     } else if (
       abuse_keywords.some((keyword) => normalizedQuery.includes(keyword))
-    ) {
+    )
+    {
       res.json({
         message:
           "I am sorry to hear that. I will forward your message to our support team.",
       });
-    } else {
+    } 
+    else if(daily_greetings.some((greeting) => normalizedQuery.includes(greeting))){
+        const timeNow = new Date().getHours();
+        let greetingNow;
+        if(timeNow >= 0 && timeNow < 12){
+            greetingNow = 'morning';
+        }
+        else if(timeNow >= 12 && timeNow < 18){
+            greetingNow = 'afternoon';
+        }
+        else if(timeNow >= 18 && timeNow < 24){
+            greetingNow = 'evening';
+        }
+        
+        res.json({
+            message: `Good ${greetingNow}, how can I help you today?`
+        });
+    } 
+    else {
       res.json({
         message:
           "I am sorry, I am not quite sure what you mean. Could you please rephrase your question or provide more details?",
