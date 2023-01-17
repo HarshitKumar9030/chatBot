@@ -20,9 +20,7 @@ Pull requests are welcome. For major changes, please open an issue first to disc
 Please make sure to update tests as appropriate.
 
 ## Author 
-[Harshit Kumar] (
-    https://www.harshitkumar.tech
-)
+[Harshit Kumar] (https://www.harshitkumar.tech)
 
 
 
