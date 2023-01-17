@@ -1,8 +1,11 @@
 {
   "name": "chat-bot",
   "version": "1.0.0",
-  "description": "A simple chat ot",
+  "description": "A simple chat bot",
   "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
   "author": "Me",
   "license": "MIT",
   "dependencies": {
