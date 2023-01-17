@@ -1,0 +1,14 @@
+{
+  "name": "chat-bot",
+  "version": "1.0.0",
+  "description": "A simple chat ot",
+  "main": "index.js",
+  "author": "Me",
+  "license": "MIT",
+  "dependencies": {
+    "body-parser": "^1.20.1",
+    "botkit": "^4.15.0",
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2"
+  }
+}
